@@ -551,7 +551,7 @@ export default function App() {
               <p className="text-[#0047BB] font-black uppercase tracking-widest text-sm">Prints reais de clientes satisfeitos em Pinhais</p>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-10 items-start">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 items-start">
               <motion.div
                 initial={{ rotate: -2, opacity: 0, y: 30 }}
                 whileInView={{ rotate: -1, opacity: 1, y: 0 }}
@@ -590,6 +590,48 @@ export default function App() {
                   message="950 megas no speedtest agora kkkkk bizarro de rápido. Finalmente uma fibra de verdade aqui na rua." 
                   time="19:15" 
                   img="https://i.pravatar.cc/100?img=52"
+                />
+              </motion.div>
+
+              <motion.div
+                initial={{ rotate: -1, opacity: 0, y: 30 }}
+                whileInView={{ rotate: -2, opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+              >
+                <WhatsAppReview 
+                  name="Juliana Piraquara" 
+                  message="Gente, a TV inclusa é ótima, tem canais de filmes e desenhos pros meus filhos. Internet nota 1000." 
+                  time="09:30" 
+                  img="https://i.pravatar.cc/100?img=44"
+                />
+              </motion.div>
+
+              <motion.div
+                initial={{ rotate: 2, opacity: 0, y: 30 }}
+                whileInView={{ rotate: 1, opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+              >
+                <WhatsAppReview 
+                  name="Carlos Eduardo" 
+                  message="Minha empresa agora voa. Instalaram o plano de 900 megas e a gente não tem mais problema com reunião travando." 
+                  time="11:55" 
+                  img="https://i.pravatar.cc/100?img=60"
+                />
+              </motion.div>
+
+              <motion.div
+                initial={{ rotate: -2, opacity: 0, y: 30 }}
+                whileInView={{ rotate: -1, opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 }}
+              >
+                <WhatsAppReview 
+                  name="Sra. Fátima" 
+                  message="O rapaz que veio instalar foi muito educado. Internet funciona na casa toda, estou muito contente." 
+                  time="16:40" 
+                  img="https://i.pravatar.cc/100?img=48"
                 />
               </motion.div>
             </div>
