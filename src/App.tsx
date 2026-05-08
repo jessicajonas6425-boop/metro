@@ -472,7 +472,7 @@ export default function App() {
                 <div className="text-center">
                   <p className="text-[#0047BB] font-black text-lg uppercase tracking-widest mb-4">Plano Especial Pinhais</p>
                   <div className="text-[140px] font-black leading-none tracking-tighter text-[#002b5c] flex items-center justify-center -ml-4">
-                    750
+                    500
                   </div>
                   <p className="text-gray-400 font-black text-2xl -mt-4 uppercase tracking-[0.2em] italic">MEGAS + TV</p>
                   
@@ -482,7 +482,7 @@ export default function App() {
                     <span className="text-gray-400 font-black text-sm uppercase">POR APENAS</span>
                     <div className="flex items-center gap-1">
                       <span className="text-[#0047BB] font-black text-2xl mt-2">R$</span>
-                      <span className="text-8xl font-black text-[#002b5c] tracking-tighter">129</span>
+                      <span className="text-8xl font-black text-[#002b5c] tracking-tighter">119</span>
                       <span className="text-3xl font-black text-[#0047BB]">,90</span>
                     </div>
                     <span className="bg-[#0047BB]/5 text-[#0047BB] px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest mt-2">
@@ -818,14 +818,24 @@ export default function App() {
       </footer>
 
       {/* --- Floating Bottom WhatsApp --- */}
-      <div className="fixed bottom-8 left-8 z-50">
-        <a 
-          href={WHATSAPP_LINK}
-          className="bg-[#8cc63f] text-black w-20 h-20 rounded-[2rem] shadow-[0_10px_30px_rgba(140,198,63,0.6)] flex items-center justify-center animate-bounce border-2 border-white hover:scale-110 transition-transform"
-        >
-          <Smartphone size={32} />
-        </a>
-      </div>
+      <a 
+        href={WHATSAPP_LINK}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 left-6 z-[60] group transition-all"
+      >
+        <div className="relative">
+          <div className="absolute inset-0 bg-green-400 rounded-full blur-xl opacity-20 group-hover:opacity-40 animate-pulse" />
+          <img 
+            src="https://portais.univasf.edu.br/programadegestao/imagens/icon-whatsapp.png/@@images/image.png" 
+            alt="WhatsApp" 
+            className="w-16 h-16 md:w-20 md:h-20 object-contain relative z-10 transition-transform group-hover:scale-110 scale-100 drop-shadow-2xl"
+          />
+          <div className="absolute -top-1 -right-1 bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded-full z-20 animate-bounce shadow-lg border-2 border-white">
+            1
+          </div>
+        </div>
+      </a>
 
       <style>{`
         @keyframes marquee {
