@@ -98,6 +98,28 @@ const WhatsAppReview = ({ name, message, time, img }: { name: string, message: s
   </div>
 );
 
+const CountdownTimeOnly = () => {
+  const [timeLeft, setTimeLeft] = useState(4800); // 1h 20m approximately
+
+  useEffect(() => {
+    if (timeLeft <= 0) return;
+    const interval = setInterval(() => {
+      setTimeLeft(prev => prev - 1);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [timeLeft]);
+
+  const hours = Math.floor(timeLeft / 3600);
+  const minutes = Math.floor((timeLeft % 3600) / 60);
+  const seconds = timeLeft % 60;
+
+  return (
+    <span>
+      {String(hours).padStart(2, '0')}:{String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}
+    </span>
+  );
+};
+
 const CountdownBanner = () => {
   const [timeLeft, setTimeLeft] = useState(257); // Random tight timer
 
@@ -319,6 +341,36 @@ export default function App() {
           </div>
         </div>
       </header>
+
+      {/* --- Promotion Highlight Alert --- */}
+      <a 
+        href={WHATSAPP_LINK}
+        className="bg-[#facc15] border-b-4 border-black py-6 px-4 relative z-30 overflow-hidden shadow-2xl block hover:bg-[#ffe045] transition-colors cursor-pointer group"
+      >
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 animate-pulse">
+          <div className="flex items-center gap-4 flex-1 justify-center lg:justify-start">
+            <AlertTriangle className="text-black shrink-0" size={40} />
+            <h2 className="text-2xl md:text-5xl font-black text-black tracking-tighter text-center lg:text-left uppercase italic leading-none">
+              Piraquara e Pinhais, só hoje!!!!!! <br className="md:hidden" />
+              <span className="bg-black text-[#facc15] px-4 py-1 inline-block mt-2 md:mt-0">10 INSTALAÇOES GRÁTIS</span>
+            </h2>
+            <AlertTriangle className="text-black hidden md:block shrink-0" size={40} />
+          </div>
+          
+          <div className="flex flex-col items-center">
+            <p className="text-black font-black text-[10px] uppercase tracking-widest mb-1">A PROMOÇÃO ENCERRA EM:</p>
+            <div className="bg-black text-[#facc15] px-6 py-2 rounded-2xl border-2 border-black font-black tabular-nums text-4xl shadow-xl flex items-center gap-3">
+               <Clock size={28} />
+               <CountdownTimeOnly />
+            </div>
+          </div>
+
+          <div className="bg-black text-white px-8 py-5 rounded-3xl font-black text-xl italic flex items-center gap-3 group-hover:scale-105 transition-transform shadow-2xl shrink-0">
+            QUERO AGORA <ArrowRight />
+          </div>
+        </div>
+        <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/asfalt-light.png')]" />
+      </a>
 
       <main>
         {/* --- Hero Section --- */}
